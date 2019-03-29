@@ -6,7 +6,7 @@
   "scripts": {
     "test": "node ./node_modules/typescript/lib/tsc.js && node ./node_modules/webdriverio/bin/wdio && node ./node_modules/rimraf/bin.js src",
     "qaTest": "node ./node_modules/typescript/lib/tsc.js && node ./node_modules/webdriverio/bin/wdio wdio.qa.conf.js && node ./node_modules/rimraf/bin.js src",
-    "report":"marge --reportFilename 'hdvi-automation-report' --ts --reportTitle 'Health Data Vision Automation Report' --reportDir ./hdvi-reports/ ./hdvireport.json && cp -r ./errorShots/ ./hdvi-reports/errorShots"
+    "report": "marge --reportFilename 'hdvi-automation-report' --ts --reportTitle 'Health Data Vision Automation Report' --reportDir ./hdvi-reports/ ./hdvireport.json && cp -r ./errorShots/ ./hdvi-reports/errorShots"
   },
   "repository": {
     "type": "git"
