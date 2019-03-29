@@ -12,7 +12,7 @@ To install Node: https://nodejs.org/en/download/
 ## Running tests
 After installing above dependencies, clone this repo by running the following command in your terminal:
 
-`git clone git@github.com:amyta/hdvi-mrcs5.git`
+`git clone https://github.com/amyta/hdvi-mrcs5.git`
 
 After cloning the repo, change directory into the project directory and run the following to install all node module dependencies:
 
