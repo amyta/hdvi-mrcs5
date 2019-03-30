@@ -8,6 +8,7 @@ The automation framework uses [WebdriverIO](https://webdriver.io) JavaScript tes
 This test framework requires Node and Java(version 1.8 minimum) to be installed.
 
 To install Node: https://nodejs.org/en/download/
+
 To install Java: https://www.java.com/en/download/manual.jsp
 
 ## Running tests
