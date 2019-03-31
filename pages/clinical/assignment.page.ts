@@ -1,4 +1,5 @@
 import { ErrorHandler } from 'webdriverio';
+import UIMapper from '../shared/uimapper';
 
 class Assignment_Page {
   public get assignmentTitle()      { return $('div.bold') }
@@ -8,13 +9,12 @@ class Assignment_Page {
   
   public open(): void {
     browser.url('/clinical/assignment')
-    this.assignmentTitle.waitForVisible(60000);
+    this.assignmentTitle.waitForVisible(UIMapper.oneMinute);
   }
 
   public clickOnChase(id: string):void {
-    browser.pause(5000)
+    browser.pause(UIMapper.standardPause)
     for (let i = 0; i < this.chaseResultsList.length; i++) {
-      console.log(this.chaseResultsList[i].getText())
       if(this.chaseResultsList[i].getText() === id) {
         this.chaseResultsList[i].element('a').click()
       }

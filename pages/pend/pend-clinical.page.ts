@@ -22,9 +22,9 @@ class PendClinical_Page {
 
   public open():void {
     browser.url('/pend/clinical')
-    this.assignmentTitle.waitForVisible(60000);
-    this.byPendCodeChart.waitForVisible(60000)
-    this.byProjectChart.waitForVisible(60000)
+    this.assignmentTitle.waitForVisible(UIMapper.oneMinute);
+    this.byPendCodeChart.waitForVisible(UIMapper.oneMinute)
+    this.byProjectChart.waitForVisible(UIMapper.oneMinute)
   }
   
   public openPendDetails(pendId:string):void {

@@ -1,4 +1,4 @@
-import { ErrorHandler } from 'webdriverio';
+import UIMapper from '../shared/uimapper';
 
 class PendRetrieval_Page {
   public get pendRetrievalTitle() { return $('div.bold') }
@@ -9,9 +9,9 @@ class PendRetrieval_Page {
 
   public open():void {
     browser.url('/pend/retrieval')
-    this.pendRetrievalTitle.waitForVisible(60000);
-    this.byPendCodeChart.waitForVisible(60000);
-    this.byProjectChart.waitForVisible(60000);
+    this.pendRetrievalTitle.waitForVisible(UIMapper.oneMinute);
+    this.byPendCodeChart.waitForVisible(UIMapper.oneMinute);
+    this.byProjectChart.waitForVisible(UIMapper.oneMinute);
   }
   
   public getPendListColumnData(columnNo:string, expectedResult:string):boolean {

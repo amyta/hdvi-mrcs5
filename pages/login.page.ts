@@ -1,4 +1,4 @@
-import { ErrorHandler } from 'webdriverio';
+import UIMapper from "./shared/uimapper";
 
 class Login_Page {
   public get loginButton()      { return $('.ui-button') }
@@ -9,19 +9,19 @@ class Login_Page {
 	public open(): void {
 		browser.url('/login')
 		try {
-		this.loginButton.waitForVisible(60000);
+		this.loginButton.waitForVisible(UIMapper.oneMinute);
 		} catch {
 				browser.refresh()
-        this.loginButton.waitForVisible(60000);
+        this.loginButton.waitForVisible(UIMapper.oneMinute);
       }
 	}
 	
 	public isLoaded(): void {
 		try {
-		this.loginPageTitle.waitForVisible(60000);
+		this.loginPageTitle.waitForVisible(UIMapper.oneMinute);
 		} catch {
 				browser.refresh()
-				this.loginPageTitle.waitForVisible(60000);
+				this.loginPageTitle.waitForVisible(UIMapper.oneMinute);
       }
   }
   

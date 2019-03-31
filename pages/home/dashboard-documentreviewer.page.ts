@@ -1,4 +1,4 @@
-import { ErrorHandler } from 'webdriverio';
+import UIMapper from '../shared/uimapper';
 
 class DashboardDocumentReviewer_Page {
 	public get dDocumentReviewerPageTitle()      { return $('div.bold') }
@@ -6,12 +6,12 @@ class DashboardDocumentReviewer_Page {
 
 	public open(): void {
     browser.url('/dashboard/documentreviewer')
-    this.dDocumentReviewerPageTitle.waitForVisible(10000);
+    this.dDocumentReviewerPageTitle.waitForVisible(UIMapper.oneMinute);
 	}
 	
   public isLoaded(): boolean {
-		this.dDocumentReviewerPageTitle.waitForVisible(10000);
-		this.documentsCompletedChart.waitForVisible(10000)
+		this.dDocumentReviewerPageTitle.waitForVisible(UIMapper.oneMinute);
+		this.documentsCompletedChart.waitForVisible(UIMapper.oneMinute)
   	return this.dDocumentReviewerPageTitle.getText() == 'YOUR DOCUMENTS' && this.documentsCompletedChart.isVisible()
   }
 

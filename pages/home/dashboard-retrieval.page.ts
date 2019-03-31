@@ -1,4 +1,4 @@
-import { ErrorHandler } from 'webdriverio';
+import UIMapper from '../shared/uimapper';
 
 class DashboardRetrieval_Page {
 	public get dRetrievalPageTitle()      { return $('div.bold') }
@@ -6,12 +6,12 @@ class DashboardRetrieval_Page {
 
 	public open(): void {
     browser.url('/dashboard/retrieval')
-    this.dRetrievalPageTitle.waitForVisible(10000);
+    this.dRetrievalPageTitle.waitForVisible(UIMapper.oneMinute);
 	}
 	
   public isLoaded(): boolean {
-		this.dRetrievalPageTitle.waitForVisible(10000);
-		this.callsAndFaxesChart.waitForVisible(10000);
+		this.dRetrievalPageTitle.waitForVisible(UIMapper.oneMinute);
+		this.callsAndFaxesChart.waitForVisible(UIMapper.oneMinute);
 		return this.dRetrievalPageTitle.getText() == 'YOUR ADDRESSES' && this.callsAndFaxesChart.isVisible();
   }
 

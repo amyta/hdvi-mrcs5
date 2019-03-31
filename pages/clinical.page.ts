@@ -1,4 +1,4 @@
-import { ErrorHandler } from 'webdriverio';
+import UIMapper from "./shared/uimapper";
 
 class Clinical_Page {
   public get clinicalTitle()      { return $('div.bold') }
@@ -7,7 +7,7 @@ class Clinical_Page {
 
   public isLoaded(): void {
     browser.url('/clinical')
-    this.clinicalTitle.waitForVisible(60000);
+    this.clinicalTitle.waitForVisible(UIMapper.oneMinute);
   }
 
   public logout():void {

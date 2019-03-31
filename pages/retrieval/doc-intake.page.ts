@@ -1,4 +1,3 @@
-import { ErrorHandler } from 'webdriverio';
 import UIMapper from '../shared/uimapper';
 
 class DocIntake_Page {
@@ -8,7 +7,7 @@ class DocIntake_Page {
   
   public open(): void {
     browser.url('/retrieval/review')
-    this.docIntakeTitle.waitForVisible(60000);
+    this.docIntakeTitle.waitForVisible(UIMapper.oneMinute);
   }
 
   public chooseFile(fileName: string):void {

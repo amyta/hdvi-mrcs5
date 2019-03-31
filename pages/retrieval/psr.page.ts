@@ -1,3 +1,5 @@
+import UIMapper from "../shared/uimapper";
+
 class PSR_Page {
   public get PSRTitle()      { return $('div.bold') }
 	public get platformAccountMenu() { return $('.account-menu > platform-account-menu')}
@@ -10,7 +12,7 @@ class PSR_Page {
   
   public open(): void {
     browser.url('/retrieval/view/psr')
-    this.PSRTitle.waitForVisible(60000);
+    this.PSRTitle.waitForVisible(UIMapper.oneMinute);
   }
 
   public filterById(id: string):void {

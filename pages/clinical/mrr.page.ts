@@ -1,4 +1,4 @@
-import { ErrorHandler } from 'webdriverio';
+import UIMapper from '../shared/uimapper';
 
 class MRR_Page {
   public get MRRTitle() { return $('div.bold') }
@@ -8,9 +8,9 @@ class MRR_Page {
 
   public open(): void {
     browser.url('/clinical/view/mrr')
-    this.MRRTitle.waitForVisible(60000);
-    this.mrrTopMetrics.waitForVisible(60000);
-    this.topRecordsNumber.waitForVisible(60000);
+    this.MRRTitle.waitForVisible(UIMapper.oneMinute);
+    this.mrrTopMetrics.waitForVisible(UIMapper.oneMinute);
+    this.topRecordsNumber.waitForVisible(UIMapper.oneMinute);
   }
 
 }

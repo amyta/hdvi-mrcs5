@@ -16,7 +16,7 @@ class ChaseQuery_Page {
 
   public open(): void {
     browser.url('/project/chasequery/hedis')
-    this.chaseQueryTitle.waitForVisible(60000);
+    this.chaseQueryTitle.waitForVisible(UIMapper.oneMinute);
   }
 
   public chooseFilter(filter: string, filterText: string):void {

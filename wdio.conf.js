@@ -11,7 +11,7 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        './src/specs/projects/chase-query.spec.js'
+        './src/specs/global-search.spec.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -93,7 +93,7 @@ exports.config = {
     baseUrl: 'https://mrcs5-uat.healthdatavision.com/',
     //
     // Default timeout for all waitFor* commands.
-    waitforTimeout: 60000,
+    waitforTimeout: 120000,
     //
     // Default timeout in milliseconds for request
     // if Selenium Grid doesn't send response
@@ -150,7 +150,7 @@ exports.config = {
     // See the full list at http://mochajs.org/
     mochaOpts: {
         ui: 'bdd',
-        timeout: 60000
+        timeout: 120000
     },
     //
     // =====

@@ -1,4 +1,3 @@
-import { ErrorHandler } from 'webdriverio';
 import UIMapper from './shared/uimapper';
 
 class Navigation_Page {

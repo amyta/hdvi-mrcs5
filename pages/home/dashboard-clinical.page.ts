@@ -1,4 +1,4 @@
-import { ErrorHandler } from 'webdriverio';
+import UIMapper from '../shared/uimapper';
 
 class DashboardClinical_Page {
 	public get dClinicalPageTitle()      { return $('div.bold') }
@@ -6,12 +6,12 @@ class DashboardClinical_Page {
 
 	public open(): void {
     browser.url('/dashboard/clinical')
-    this.dClinicalPageTitle.waitForVisible(10000);
+    this.dClinicalPageTitle.waitForVisible(UIMapper.oneMinute);
 	}
 	
   public isLoaded(): boolean {
-		this.dClinicalPageTitle.waitForVisible(10000);
-		this.chasesCompletedChart.waitForVisible(10000);
+		this.dClinicalPageTitle.waitForVisible(UIMapper.oneMinute);
+		this.chasesCompletedChart.waitForVisible(UIMapper.oneMinute);
 		return this.dClinicalPageTitle.getText() == 'YOUR CHASES' && this.chasesCompletedChart.isVisible();
   }
 

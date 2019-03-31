@@ -1,4 +1,3 @@
-import { ErrorHandler } from 'webdriverio';
 import UIMapper from '../shared/uimapper';
 
 class Assignment_Page {
@@ -8,7 +7,7 @@ class Assignment_Page {
 
   public open(): void {
     browser.url('/retrieval/assignment')
-    this.assignmentTitle.waitForVisible(60000);
+    this.assignmentTitle.waitForVisible(UIMapper.oneMinute);
   }
 
   public assignAID(fileName: string):void {

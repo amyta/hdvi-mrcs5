@@ -4,6 +4,7 @@ import UIMapper from '../../pages/shared/uimapper';
 import AssignmentPage from '../../pages/clinical/assignment.page';
 import ClinicalPage from '../../pages/clinical.page';
 import NavigationPage from '../../pages/navigation.page';
+import SharePage from '../../pages/shared/share.page';
 
 
 describe('Clinical assignments test suite', () => {
@@ -17,10 +18,11 @@ describe('Clinical assignments test suite', () => {
     AssignmentPage.open();
     NavigationPage.closeSoftwareUpdatePopup();
     AssignmentPage.clickOnChase('6');
-    browser.pause(10000);
+    SharePage.doneLoading();
+
     expect(browser.getUrl()).to.equal('https://mrcs5-uat.healthdatavision.com/members/chase/6');
-    expect(AssignmentPage.unassignedChaseErrorMessage.getText()).to.equal('You are not currently assigned to this Chase. Certain functions will not be available to you.');
-    expect(AssignmentPage.readOnlyDisplay.getText()).to.equal('Readonly View');
+    expect(AssignmentPage.unassignedChaseErrorMessage.getText()).to.equal(UIMapper.unassignedChaseErrorMessage);
+    expect(AssignmentPage.readOnlyDisplay.getText()).to.equal(UIMapper.readonlyText);
     ClinicalPage.logout();
   });
 });
