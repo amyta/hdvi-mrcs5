@@ -7,7 +7,12 @@
     "experimentalDecorators": true,
     "removeComments": true,
     "noImplicitAny": false,
-    "outDir": "src/"
+    "outDir": "src/",
+    "lib": [
+      "es2017",
+      "dom",
+      "scripthost"
+    ],
   },
   "exclude": [
     "node_modules"
